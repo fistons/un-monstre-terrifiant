@@ -20,10 +20,8 @@ position = Vector2( 409, 419 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground"]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground/StaticBody2D"]
-visible = false
 polygon = PoolVector2Array( 218, 59, 217, -35, 205, -49, -10, -48, -216, -25, -217, 56 )
 
 [node name="lava" type="Sprite" parent="."]

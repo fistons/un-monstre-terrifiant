@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://levels/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://props/Flower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://props/flower2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://props/moving_cloud.tscn" type="PackedScene" id=5]
 
 [node name="Level" type="Node2D"]
 
@@ -30,6 +31,9 @@ z_index = 200
 
 [node name="flower4" parent="props" instance=ExtResource( 4 )]
 position = Vector2( 2716.35, 359.205 )
+
+[node name="cloud" parent="props" instance=ExtResource( 5 )]
+position = Vector2( 1132.44, 163.56 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 511, 299 )

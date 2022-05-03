@@ -7,7 +7,7 @@ const GRAVITY = 300
 const UP = Vector2(0,-1)
 const JUMP_SPEED = 2500
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	apply_grativity()
 	jump()
 	move()
