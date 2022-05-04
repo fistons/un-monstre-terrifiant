@@ -1,8 +1,5 @@
 image: barichello/godot-ci:3.4.2
 
-# NOTE: the `cd` command in each build stage is not necessary if your
-# project.godot is at the repo root
-
 # Cache imported assets between runs
 cache:
   key: import-assets
@@ -31,7 +28,7 @@ linux:
 windows:
   stage: export
   tags:
-    - docker  
+    - docker
   script:
     - mkdir -v -p build/windows
     - godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
@@ -43,7 +40,7 @@ windows:
 web:
   stage: export
   tags:
-    - docker  
+    - docker
   script:
     - mkdir -v -p build/web
     - godot -v --export "HTML5" build/web/index.html
@@ -56,6 +53,8 @@ web:
 # Itch.io Deploy
 itchio:linux:
   stage: deploy
+  tags:
+    - docker
   script:
     - butler push ./build/linux $ITCHIO_USERNAME/$ITCHIO_GAME:linux
   dependencies:
@@ -63,6 +62,8 @@ itchio:linux:
 
 itchio:windows:
   stage: deploy
+  tags:
+    - docker
   script:
     - butler push ./build/windows $ITCHIO_USERNAME/$ITCHIO_GAME:windows
   dependencies:
