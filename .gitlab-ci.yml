@@ -17,6 +17,8 @@ variables:
 
 linux:
   stage: export
+  tags:
+    - docker
   script:
     - mkdir -v -p build/linux
     - godot -v --export "Linux/X11" ../build/linux/$EXPORT_NAME.x86_64
@@ -27,6 +29,8 @@ linux:
 
 windows:
   stage: export
+  tags:
+    - docker  
   script:
     - mkdir -v -p build/windows
     - godot -v --export "Windows Desktop" ../build/windows/$EXPORT_NAME.exe
@@ -37,6 +41,8 @@ windows:
 
 mac:
   stage: export
+  tags:
+    - docker  
   script:
     - mkdir -v -p build/mac
     - cd $EXPORT_NAME
@@ -48,6 +54,8 @@ mac:
 
 web:
   stage: export
+  tags:
+    - docker  
   script:
     - mkdir -v -p build/web
     - cd $EXPORT_NAME
