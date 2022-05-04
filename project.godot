@@ -14,6 +14,10 @@ config/name="UnMonstreTerrifiant"
 run/main_scene="res://levels/level1.tscn"
 config/icon="res://icon.png"
 
+[gui]
+
+theme/use_hidpi=true
+
 [input]
 
 ui_accept={
