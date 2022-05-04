@@ -5,46 +5,44 @@
 [ext_resource path="res://gfx/lava.png" type="Texture" id=3]
 [ext_resource path="res://gfx/bloc.png" type="Texture" id=4]
 [ext_resource path="res://gfx/upground.png" type="Texture" id=5]
+[ext_resource path="res://gfx/lava02.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 216, 48 )
+extents = Vector2( 175.5, 44 )
 
-[sub_resource type="ConvexPolygonShape2D" id=11]
-points = PoolVector2Array( 147, 0, 170, -2, 171, 62, -168, 63 )
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 175, -34, 176, 47, -174, 48, 115, -21 )
 
-[sub_resource type="ConvexPolygonShape2D" id=12]
-points = PoolVector2Array( 14, -15, 147, 0, -168, 63 )
+[sub_resource type="ConvexPolygonShape2D" id=27]
+points = PoolVector2Array( -174, 48, -177, -33, -152, -45, -34, -7 )
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
-points = PoolVector2Array( 2, -23, 14, -15, -168, 63, -69, -23 )
+[sub_resource type="ConvexPolygonShape2D" id=28]
+points = PoolVector2Array( 115, -21, 140, -40, 175, -34 )
 
-[sub_resource type="ConvexPolygonShape2D" id=14]
-points = PoolVector2Array( -69, -23, -168, 63, -171, -47, -110, -41 )
+[sub_resource type="ConvexPolygonShape2D" id=29]
+points = PoolVector2Array( 37, -5, 115, -21, -174, 48 )
 
-[sub_resource type="ConvexPolygonShape2D" id=15]
-points = PoolVector2Array( -110, -41, -87, -50, -78, -45, -69, -23 )
+[sub_resource type="ConvexPolygonShape2D" id=30]
+points = PoolVector2Array( 37, -5, -174, 48, -34, -7 )
 
-[sub_resource type="ConvexPolygonShape2D" id=16]
-points = PoolVector2Array( -110, -41, -171, -47, -137, -60, -120, -56 )
-
-[sub_resource type="ConvexPolygonShape2D" id=17]
+[sub_resource type="ConvexPolygonShape2D" id=31]
 points = PoolVector2Array( -58, 31, -58, -27, 58, -52, 65, 50 )
 
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 261.5, 15.5 )
-
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 261.5, 15.5 )
+extents = Vector2( 192, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 112.5, 38.5 )
 
 [resource]
 0/name = "cloud"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 514, 148 )
+0/region = Rect2( 0, 0, 320, 148 )
 0/tile_mode = 0
-0/occluder_offset = Vector2( 257, 74 )
-0/navigation_offset = Vector2( 257, 74 )
+0/occluder_offset = Vector2( 160, 74 )
+0/navigation_offset = Vector2( 160, 74 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 0/shape_one_way = false
@@ -55,12 +53,12 @@ extents = Vector2( 261.5, 15.5 )
 1/texture = ExtResource( 2 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 433, 116 )
+1/region = Rect2( 0, 0, 352, 96 )
 1/tile_mode = 0
-1/occluder_offset = Vector2( 216.5, 58 )
-1/navigation_offset = Vector2( 216.5, 58 )
-1/shape_offset = Vector2( 216.5, 69 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 216.5, 69 )
+1/occluder_offset = Vector2( 176, 48 )
+1/navigation_offset = Vector2( 176, 48 )
+1/shape_offset = Vector2( 175.5, 51 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 175.5, 51 )
 1/shape = SubResource( 10 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
@@ -69,58 +67,52 @@ extents = Vector2( 261.5, 15.5 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 10 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 216.5, 69 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 175.5, 51 )
 } ]
 1/z_index = 0
 2/name = "lava"
 2/texture = ExtResource( 3 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 341, 123 )
+2/region = Rect2( 0, 0, 352, 96 )
 2/tile_mode = 0
-2/occluder_offset = Vector2( 170.5, 61.5 )
-2/navigation_offset = Vector2( 170.5, 61.5 )
-2/shape_offset = Vector2( 170.5, 61.5 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 170.5, 61.5 )
-2/shape = SubResource( 11 )
+2/occluder_offset = Vector2( 176, 48 )
+2/navigation_offset = Vector2( 176, 48 )
+2/shape_offset = Vector2( 176, 48 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 176, 48 )
+2/shape = SubResource( 26 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 11 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 170.5, 61.5 )
+"shape": SubResource( 26 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 176, 48 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 12 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 170.5, 61.5 )
+"shape": SubResource( 27 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 176, 48 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 170.5, 61.5 )
+"shape": SubResource( 28 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 176, 48 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 14 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 170.5, 61.5 )
+"shape": SubResource( 29 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 176, 48 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 15 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 170.5, 61.5 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 16 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 170.5, 61.5 )
+"shape": SubResource( 30 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 176, 48 )
 } ]
 2/z_index = 0
 3/name = "water"
@@ -133,56 +125,56 @@ extents = Vector2( 261.5, 15.5 )
 3/navigation_offset = Vector2( 67.5, 53.5 )
 3/shape_offset = Vector2( 67.5, 53.5 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 67.5, 53.5 )
-3/shape = SubResource( 17 )
+3/shape = SubResource( 31 )
 3/shape_one_way = false
 3/shape_one_way_margin = 1.0
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 17 ),
+"shape": SubResource( 31 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 67.5, 53.5 )
 } ]
 3/z_index = 0
-4/name = "Sprite"
+4/name = "ground2"
 4/texture = ExtResource( 5 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 0, 0, 544, 47 )
+4/region = Rect2( 0, 0, 384, 45 )
 4/tile_mode = 0
-4/occluder_offset = Vector2( 272, 23.5 )
-4/navigation_offset = Vector2( 272, 23.5 )
-4/shape_offset = Vector2( 272.5, 24 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 272.5, 24 )
-4/shape = SubResource( 9 )
+4/occluder_offset = Vector2( 192, 22.5 )
+4/navigation_offset = Vector2( 192, 22.5 )
+4/shape_offset = Vector2( 191, 22 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 191, 22 )
+4/shape = SubResource( 18 )
 4/shape_one_way = false
 4/shape_one_way_margin = 1.0
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 9 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 272.5, 24 )
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 191, 22 )
 } ]
 4/z_index = 0
-5/name = "ground2"
-5/texture = ExtResource( 5 )
+5/name = "lava2"
+5/texture = ExtResource( 6 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 0, 0, 544, 47 )
+5/region = Rect2( 0, 0, 224, 96 )
 5/tile_mode = 0
-5/occluder_offset = Vector2( 272, 23.5 )
-5/navigation_offset = Vector2( 272, 23.5 )
-5/shape_offset = Vector2( 272.5, 24 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 272.5, 24 )
-5/shape = SubResource( 18 )
+5/occluder_offset = Vector2( 112, 48 )
+5/navigation_offset = Vector2( 112, 48 )
+5/shape_offset = Vector2( 112, 57.5 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 112, 57.5 )
+5/shape = SubResource( 32 )
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 18 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 272.5, 24 )
+"shape": SubResource( 32 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 112, 57.5 )
 } ]
 5/z_index = 0

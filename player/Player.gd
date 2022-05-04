@@ -7,6 +7,9 @@ const GRAVITY = 300
 const UP = Vector2(0,-1)
 const JUMP_SPEED = 2500
 
+func _ready():
+	add_to_group("player")
+
 func _physics_process(_delta):
 	apply_grativity()
 	jump()

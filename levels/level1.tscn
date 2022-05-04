@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://levels/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -6,45 +6,103 @@
 [ext_resource path="res://props/flower2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://props/moving_cloud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://props/rocks.tscn" type="PackedScene" id=6]
+[ext_resource path="res://props/sun.tscn" type="PackedScene" id=7]
+[ext_resource path="res://props/coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://props/potion.tscn" type="PackedScene" id=9]
+[ext_resource path="res://props/heart.tscn" type="PackedScene" id=10]
+[ext_resource path="res://props/ice.tscn" type="PackedScene" id=11]
 
 [node name="Level" type="Node2D"]
 
 [node name="props" type="Node" parent="."]
 
 [node name="Flower" parent="props" instance=ExtResource( 3 )]
-position = Vector2( 1086.44, 440.63 )
+position = Vector2( 1081.39, 464.404 )
 z_index = -5
 
 [node name="Flower2" parent="props" instance=ExtResource( 3 )]
-position = Vector2( 1785.9, 440.63 )
+position = Vector2( 1784.22, 464.404 )
 z_index = -200
 
 [node name="Flower3" parent="props" instance=ExtResource( 3 )]
-position = Vector2( 3092.7, 231.06 )
+position = Vector2( 3219.1, 226.363 )
 z_index = -5
 
 [node name="flower2" parent="props" instance=ExtResource( 4 )]
-position = Vector2( 1241.35, 440.63 )
+position = Vector2( 1237.79, 464.404 )
 
 [node name="flower3" parent="props" instance=ExtResource( 4 )]
-position = Vector2( 2036.91, 440.63 )
+position = Vector2( 2036.91, 464.404 )
 z_index = 200
 
 [node name="flower4" parent="props" instance=ExtResource( 4 )]
-position = Vector2( 2716.35, 359.205 )
+position = Vector2( 2628.67, 373.13 )
 
 [node name="cloud" parent="props" instance=ExtResource( 5 )]
-position = Vector2( 1132.44, 163.56 )
+position = Vector2( 1431.44, 72.7909 )
 
 [node name="rocks" parent="props" instance=ExtResource( 6 )]
-position = Vector2( 722.663, 487.904 )
+position = Vector2( 720.881, 503.94 )
+z_index = -1
+
+[node name="sun" parent="props" instance=ExtResource( 7 )]
+position = Vector2( 1081.27, -32.0906 )
+z_index = -150
+
+[node name="coins" type="Node" parent="props"]
+
+[node name="coin" parent="props/coins" instance=ExtResource( 8 )]
+position = Vector2( 2093.14, 436.13 )
+
+[node name="coin2" parent="props/coins" instance=ExtResource( 8 )]
+position = Vector2( 2165.05, 436.13 )
+
+[node name="coin3" parent="props/coins" instance=ExtResource( 8 )]
+position = Vector2( 2242.97, 436.13 )
+
+[node name="coin4" parent="props/coins" instance=ExtResource( 8 )]
+position = Vector2( 2320.88, 436.13 )
+
+[node name="heart" type="Node" parent="props"]
+
+[node name="heart" parent="props/heart" instance=ExtResource( 10 )]
+position = Vector2( 912.469, 436.13 )
+
+[node name="heart2" parent="props/heart" instance=ExtResource( 10 )]
+position = Vector2( 1166.27, 451.113 )
+
+[node name="heart3" parent="props/heart" instance=ExtResource( 10 )]
+position = Vector2( 1927.41, 436.13 )
+
+[node name="heart4" parent="props/heart" instance=ExtResource( 10 )]
+position = Vector2( 2018.81, 239.852 )
+
+[node name="heart5" parent="props/heart" instance=ExtResource( 10 )]
+position = Vector2( 2165.05, 146.791 )
+
+[node name="heart6" parent="props/heart" instance=ExtResource( 10 )]
+position = Vector2( 2165.05, 146.791 )
+
+[node name="potions" type="Node" parent="props"]
+
+[node name="potion" parent="props/potions" instance=ExtResource( 9 )]
+position = Vector2( 2861.73, 287.852 )
+
+[node name="potion2" parent="props/potions" instance=ExtResource( 9 )]
+position = Vector2( 3351.67, 207.852 )
+
+[node name="iceblocks" type="Node" parent="props"]
+
+[node name="ice" parent="props/iceblocks" instance=ExtResource( 11 )]
+position = Vector2( 1524.78, 499.113 )
+z_index = -50
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 511, 299 )
-z_index = 10
+z_index = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -327612, 0, 0, 917491, 0, 0, 1179838, 4, 0, 1310903, 4, 0, 1507503, 4, 0, 1638450, 3, 0, 1704090, 1, 0, 1835094, 3, 0, 1966199, 4, 0, 2097140, 4, 0, 2031616, 1, 0, 2031643, 1, 0, 2031670, 1, 0, 2031697, 2, 0, 2031718, 1, 0, 2031744, 1, 0, 2031770, 1, 0 )
+tile_data = PoolIntArray( 1114305, 1, 0, 1441963, 1, 0, 1441985, 1, 0, 1769621, 1, 0, 1769643, 1, 0, 1769665, 1, 0, 2097152, 1, 0, 2097174, 1, 0, 2097196, 1, 0, 2097218, 1, 0, 2097240, 5, 0, 2097254, 1, 0, 2097276, 1, 0, 2097298, 1, 0, 2097320, 1, 0, 2097342, 1, 0, 2097364, 1, 0 )
