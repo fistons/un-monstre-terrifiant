@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://props/Flower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://props/flower2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://props/moving_cloud.tscn" type="PackedScene" id=5]
+[ext_resource path="res://props/rocks.tscn" type="PackedScene" id=6]
 
 [node name="Level" type="Node2D"]
 
@@ -35,6 +36,9 @@ position = Vector2( 2716.35, 359.205 )
 [node name="cloud" parent="props" instance=ExtResource( 5 )]
 position = Vector2( 1132.44, 163.56 )
 
+[node name="rocks" parent="props" instance=ExtResource( 6 )]
+position = Vector2( 722.663, 487.904 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 511, 299 )
 z_index = 10
@@ -43,4 +47,4 @@ z_index = 10
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 1179838, 4, 0, 1310903, 4, 0, 1507503, 4, 0, 1704090, 1, 0, 1835094, 3, 0, 2031616, 1, 0, 2031643, 1, 0, 2031670, 1, 0, 2031697, 2, 0, 2031718, 1, 0, 2031744, 1, 0, 2031770, 1, 0 )
+tile_data = PoolIntArray( -327612, 0, 0, 917491, 0, 0, 1179838, 4, 0, 1310903, 4, 0, 1507503, 4, 0, 1638450, 3, 0, 1704090, 1, 0, 1835094, 3, 0, 1966199, 4, 0, 2097140, 4, 0, 2031616, 1, 0, 2031643, 1, 0, 2031670, 1, 0, 2031697, 2, 0, 2031718, 1, 0, 2031744, 1, 0, 2031770, 1, 0 )
