@@ -56,7 +56,7 @@ itchio:linux:
   tags:
     - docker
   script:
-    - butler push ./build/linux $ITCHIO_USERNAME/$ITCHIO_GAME:linux
+    - butler push ./build/linux $ITCHIO_USERNAME/$ITCHIO_GAME:linux --userversion $CI_PIPELINE_IID
   dependencies:
     - linux
 
@@ -65,6 +65,15 @@ itchio:windows:
   tags:
     - docker
   script:
-    - butler push ./build/windows $ITCHIO_USERNAME/$ITCHIO_GAME:windows
+    - butler push ./build/windows $ITCHIO_USERNAME/$ITCHIO_GAME:windows --userversion $CI_PIPELINE_IID
   dependencies:
     - windows
+
+itchio:web:
+  stage: deploy
+  tags:
+    - docker
+  script:
+    - butler push ./build/web $ITCHIO_USERNAME/$ITCHIO_GAME:web --userversion $CI_PIPELINE_IID
+  dependencies:
+    - web
