@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://levels/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -12,31 +12,34 @@
 [ext_resource path="res://props/heart.tscn" type="PackedScene" id=10]
 [ext_resource path="res://props/ice.tscn" type="PackedScene" id=11]
 [ext_resource path="res://props/ui/GUI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://props/LavaBubble.tscn" type="PackedScene" id=13]
 
 [node name="Level" type="Node2D"]
 
 [node name="props" type="Node" parent="."]
 
-[node name="Flower" parent="props" instance=ExtResource( 3 )]
+[node name="flowers" type="Node" parent="props"]
+
+[node name="Flower" parent="props/flowers" instance=ExtResource( 3 )]
 position = Vector2( 1081.39, 464.404 )
 z_index = -5
 
-[node name="Flower2" parent="props" instance=ExtResource( 3 )]
+[node name="Flower2" parent="props/flowers" instance=ExtResource( 3 )]
 position = Vector2( 1784.22, 464.404 )
 z_index = -200
 
-[node name="Flower3" parent="props" instance=ExtResource( 3 )]
+[node name="Flower3" parent="props/flowers" instance=ExtResource( 3 )]
 position = Vector2( 3219.1, 226.363 )
 z_index = -5
 
-[node name="flower2" parent="props" instance=ExtResource( 4 )]
+[node name="flower2" parent="props/flowers" instance=ExtResource( 4 )]
 position = Vector2( 1237.79, 464.404 )
 
-[node name="flower3" parent="props" instance=ExtResource( 4 )]
+[node name="flower3" parent="props/flowers" instance=ExtResource( 4 )]
 position = Vector2( 2036.91, 464.404 )
 z_index = 200
 
-[node name="flower4" parent="props" instance=ExtResource( 4 )]
+[node name="flower4" parent="props/flowers" instance=ExtResource( 4 )]
 position = Vector2( 2628.67, 373.13 )
 
 [node name="cloud" parent="props" instance=ExtResource( 5 )]
@@ -97,6 +100,12 @@ position = Vector2( 3351.67, 207.852 )
 [node name="ice" parent="props/iceblocks" instance=ExtResource( 11 )]
 position = Vector2( 1524.78, 499.113 )
 z_index = -50
+
+[node name="misc" type="Node" parent="props"]
+
+[node name="LavaBubble" parent="props/misc" instance=ExtResource( 13 )]
+position = Vector2( 1564.49, 499.113 )
+z_index = 3
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 511, 299 )
