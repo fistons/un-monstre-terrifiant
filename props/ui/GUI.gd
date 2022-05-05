@@ -1,5 +1,7 @@
 extends CanvasLayer
 
 
-func update(coin: int, heart: int):
-	print("yes hello " + str(coin) + " " + str(heart))
+func update(coins: int, hearts: int):
+	$Control/HBoxContainer/HearthGauge/HeartCount.text = str(hearts)
+	$Control/HBoxContainer/CoinGauge/CoinCount.text = str(coins)
+

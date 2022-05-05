@@ -15,6 +15,7 @@ func _physics_process(_delta):
 	jump()
 	move()
 	move_and_slide(motion, UP)
+	restart()
 		
 
 func move():
@@ -36,3 +37,7 @@ func apply_grativity():
 		motion.y = 1
 	else:
 		motion.y += GRAVITY
+
+func restart():
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
