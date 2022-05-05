@@ -10,9 +10,16 @@ config_version=4
 
 [application]
 
-config/name="UnMonstreTerrifiant"
+config/name="Un Monstre Terrifiant"
+config/description="Un monstre terrifiant qui n'a pas le choix de ne pas marcher dans la lave"
 run/main_scene="res://levels/level1.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/resizable=false
+window/dpi/allow_hidpi=true
+window/vsync/vsync_via_compositor=true
 
 [gui]
 
@@ -50,4 +57,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+threads/thread_model=2
 environment/default_environment="res://default_env.tres"
