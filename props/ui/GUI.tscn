@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://gfx/UI/piecegauge.png" type="Texture" id=1]
 [ext_resource path="res://gfx/UI/heartgauge.png" type="Texture" id=2]
+[ext_resource path="res://props/ui/GUI.gd" type="Script" id=3]
 
-[node name="GUI" type="CanvasLayer"]
+[node name="GUI" type="CanvasLayer" groups=["GUI"]]
+script = ExtResource( 3 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 1024.0
