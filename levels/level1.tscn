@@ -12,7 +12,7 @@
 [ext_resource path="res://props/heart.tscn" type="PackedScene" id=10]
 [ext_resource path="res://props/ice.tscn" type="PackedScene" id=11]
 [ext_resource path="res://props/ui/GUI.tscn" type="PackedScene" id=12]
-[ext_resource path="res://props/LavaBubble.tscn" type="PackedScene" id=13]
+[ext_resource path="res://props/lava.tscn" type="PackedScene" id=13]
 [ext_resource path="res://levels/GameState.gd" type="Script" id=14]
 
 [node name="Level" type="Node2D"]
@@ -105,9 +105,8 @@ z_index = -50
 
 [node name="misc" type="Node" parent="props"]
 
-[node name="LavaBubble" parent="props/misc" instance=ExtResource( 13 )]
-position = Vector2( 1564.49, 499.113 )
-z_index = 3
+[node name="Lava" parent="props/misc" instance=ExtResource( 13 )]
+position = Vector2( 1520, 560 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 511, 299 )
@@ -117,6 +116,6 @@ z_index = 1
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 1114305, 1, 0, 1441963, 1, 0, 1441985, 1, 0, 1769621, 1, 0, 1769643, 1, 0, 1769665, 1, 0, 2097152, 1, 0, 2097174, 1, 0, 2097196, 1, 0, 2097218, 1, 0, 2097240, 5, 0, 2097254, 1, 0, 2097276, 1, 0, 2097298, 1, 0, 2097320, 1, 0, 2097342, 1, 0, 2097364, 1, 0 )
+tile_data = PoolIntArray( 1114305, 1, 0, 1441963, 1, 0, 1441985, 1, 0, 1769621, 1, 0, 1769643, 1, 0, 1769665, 1, 0, 2097152, 1, 0, 2097174, 1, 0, 2097196, 1, 0, 2097218, 1, 0, 2097254, 1, 0, 2097276, 1, 0, 2097298, 1, 0, 2097320, 1, 0, 2097342, 1, 0, 2097364, 1, 0 )
 
 [node name="GUI" parent="." instance=ExtResource( 12 )]

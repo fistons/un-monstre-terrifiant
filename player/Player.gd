@@ -31,6 +31,8 @@ func jump():
 		motion.y -= JUMP_SPEED
 
 func apply_grativity():
+	if position.y > 6500:
+		get_tree().call_group("GameState", "lost")
 	if  is_on_floor() and motion.y > 0:
 		motion.y = 0
 	elif is_on_ceiling():
@@ -41,3 +43,8 @@ func apply_grativity():
 func restart():
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
+
+func hurt():
+	position.y -= 1
+	yield(get_tree(), "idle_frame")
+	motion.y = -JUMP_SPEED*2
