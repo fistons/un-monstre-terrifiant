@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://levels/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://props/ui/GUI.tscn" type="PackedScene" id=12]
 [ext_resource path="res://props/lava.tscn" type="PackedScene" id=13]
 [ext_resource path="res://levels/GameState.gd" type="Script" id=14]
+[ext_resource path="res://sfx/German Industrial Metal.mp3" type="AudioStream" id=15]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 14 )
@@ -119,3 +120,7 @@ format = 1
 tile_data = PoolIntArray( 1114305, 1, 0, 1441963, 1, 0, 1441985, 1, 0, 1769621, 1, 0, 1769643, 1, 0, 1769665, 1, 0, 2097152, 1, 0, 2097174, 1, 0, 2097196, 1, 0, 2097218, 1, 0, 2097254, 1, 0, 2097276, 1, 0, 2097298, 1, 0, 2097320, 1, 0, 2097342, 1, 0, 2097364, 1, 0 )
 
 [node name="GUI" parent="." instance=ExtResource( 12 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+autoplay = true

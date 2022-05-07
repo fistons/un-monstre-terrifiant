@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/German Industrial Metal.mp3-1fd9a1fe5fee37e2c768e5e584ba0901.mp3str"
+
+[deps]
+
+source_file="res://sfx/German Industrial Metal.mp3"
+dest_files=[ "res://.import/German Industrial Metal.mp3-1fd9a1fe5fee37e2c768e5e584ba0901.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
