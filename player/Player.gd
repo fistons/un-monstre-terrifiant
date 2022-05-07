@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 
 var motion = Vector2(0,0)
+var invincible: bool = false
+export var invincible_time = 1.5
+
 const SPEED = 500
 const GRAVITY = 300
 const UP = Vector2(0,-1)
@@ -9,6 +12,7 @@ const JUMP_SPEED = 2500
 
 func _ready():
 	add_to_group("player")
+
 
 func _physics_process(_delta):
 	apply_grativity()
@@ -45,6 +49,15 @@ func restart():
 		get_tree().reload_current_scene()
 
 func hurt():
+	if not invincible:
+		invincible = true
+		$InvincibleTimer.start()
+		$AnimationPlayer.play("invisible")
 	position.y -= 1
 	yield(get_tree(), "idle_frame")
 	motion.y = -JUMP_SPEED*2
+
+
+func _on_InvincibleTimer_timeout():
+	invincible = false
+

@@ -8,10 +8,22 @@
 [ext_resource path="res://gfx/mountains03.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 23, 81 )
+extents = Vector2( 22.5, 79 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "invisible"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true, false, true ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 4 )
@@ -21,7 +33,7 @@ position = Vector2( -1, 0 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 7, 1 )
+position = Vector2( 6.5, -1 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -76,9 +88,10 @@ margin_right = 551.0
 margin_bottom = 601.0
 texture = ExtResource( 6 )
 
-[node name="invisible" type="Timer" parent="."]
-wait_time = 3.0
+[node name="InvincibleTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/invisible = SubResource( 2 )
+
+[connection signal="timeout" from="InvincibleTimer" to="." method="_on_InvincibleTimer_timeout"]

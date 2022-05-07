@@ -22,9 +22,10 @@ func reload_scene():
 	get_tree().reload_current_scene()
 
 func hurt():
-	hearts -= 1
-	if hearts < 0:
-		lost()
+	if not $Player.invincible:
+		hearts -= 1
+		if hearts < 0:
+			lost()
 	update_GUI()
 	$Player.hurt()
 
