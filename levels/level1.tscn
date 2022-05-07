@@ -108,6 +108,7 @@ z_index = -50
 
 [node name="Lava" parent="props/misc" instance=ExtResource( 13 )]
 position = Vector2( 1520, 560 )
+z_index = 1
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 511, 299 )
