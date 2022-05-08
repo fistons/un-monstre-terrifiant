@@ -1,29 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://gfx/clouds.png" type="Texture" id=1]
+[ext_resource path="res://gfx/groundbloc.png" type="Texture" id=1]
 [ext_resource path="res://gfx/ground.png" type="Texture" id=2]
-[ext_resource path="res://gfx/lava.png" type="Texture" id=3]
-[ext_resource path="res://gfx/bloc.png" type="Texture" id=4]
-[ext_resource path="res://gfx/upground.png" type="Texture" id=5]
-[ext_resource path="res://gfx/lava02.png" type="Texture" id=6]
+[ext_resource path="res://gfx/ground02.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 175.5, 41.5 )
 
-[sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 192, 14.5 )
-
-[sub_resource type="RectangleShape2D" id=32]
-extents = Vector2( 112.5, 38.5 )
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 48, 48 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="cloud" type="Sprite" parent="."]
-position = Vector2( 732, 89 )
-texture = ExtResource( 1 )
-
 [node name="ground" type="Sprite" parent="."]
-position = Vector2( 811, 275 )
+position = Vector2( 215, 384 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ground"]
@@ -32,47 +22,21 @@ texture = ExtResource( 2 )
 position = Vector2( -0.5, 5.5 )
 shape = SubResource( 10 )
 
-[node name="lava" type="Sprite" parent="."]
-position = Vector2( 824, 420 )
+[node name="GroundBloc" type="Sprite" parent="."]
+position = Vector2( 90, 237 )
+z_index = 1
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GroundBloc"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundBloc/StaticBody2D"]
+shape = SubResource( 19 )
+
+[node name="ground_corner" type="Sprite" parent="."]
+position = Vector2( 215, 93 )
 texture = ExtResource( 3 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="lava"]
-collision_layer = 2
+[node name="StaticBody2D" type="StaticBody2D" parent="ground_corner"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lava/StaticBody2D"]
-polygon = PoolVector2Array( -174, 48, -177, -33, -152, -45, -34, -7, 37, -5, 115, -21, 140, -40, 175, -34, 176, 47 )
-
-[node name="water" type="Sprite" parent="."]
-position = Vector2( 283, 225 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="water"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="water/StaticBody2D"]
-polygon = PoolVector2Array( 65, 50, 58, -52, -53, -23, -57, 48 )
-
-[node name="ground2" type="Sprite" parent="."]
-position = Vector2( 234, 69 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="ground2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ground2/StaticBody2D"]
-position = Vector2( -1, -0.5 )
-shape = SubResource( 18 )
-
-[node name="lava2" type="Sprite" parent="."]
-position = Vector2( 247, 427 )
-texture = ExtResource( 6 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="lava2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lava2/StaticBody2D"]
-position = Vector2( 0, 9.5 )
-shape = SubResource( 32 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_corner/StaticBody2D"]
+polygon = PoolVector2Array( -176, 48, -176, -20, -165, -35, -146, -38, -112, -34, -43, -36, 47, -37, 67, -41, 126, -40, 144, -37, 176, -36, 176, 48 )
