@@ -3,7 +3,6 @@ extends KinematicBody2D
 
 var motion = Vector2(0,0)
 var invincible: bool = false
-export var invincible_time = 1.5
 
 const SPEED = 500
 const GRAVITY = 300

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://HeartBar.gd" type="Script" id=1]
+
+[node name="HeartBar" type="HBoxContainer"]
+script = ExtResource( 1 )

@@ -1,12 +1,8 @@
 extends CanvasLayer
 
 
-func update(coins: int, hearts: int):
-	if hearts == 0:
-		$Control/HBoxContainer/HearthGauge/HeartCount.set("custom_colors/font_color", Color.red)
-	else: 
-		$Control/HBoxContainer/HearthGauge/HeartCount.set("custom_colors/font_color", Color.white)
-	
-	$Control/HBoxContainer/HearthGauge/HeartCount.text = str(hearts)
-	$Control/HBoxContainer/CoinGauge/CoinCount.text = str(coins)
+func update(coins: int, hearts: int, max_hearts: int):
+	$Control/VBoxContainer/CoinBar/CoinGauge/CoinCount.text = str(coins)
+	print(str(hearts) + "   " + str(max_hearts))
 
+	$Control/VBoxContainer/HeartBar.update_stuff(hearts, max_hearts)

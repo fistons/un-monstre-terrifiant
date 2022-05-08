@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gfx/monster.png" type="Texture" id=1]
 [ext_resource path="res://gfx/background.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://player/Player.gd" type="Script" id=4]
 [ext_resource path="res://gfx/mountains02.png" type="Texture" id=5]
 [ext_resource path="res://gfx/mountains03.png" type="Texture" id=6]
+[ext_resource path="res://gfx/sun.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.5, 79 )
@@ -45,17 +46,27 @@ limit_bottom = 0
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
 scroll_ignore_camera_zoom = true
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+[node name="back" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
 z_index = -50
 motion_scale = Vector2( 0.1, 1 )
 motion_mirroring = Vector2( 2140, 0 )
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/back"]
 margin_left = -749.0
 margin_top = -122.0
 margin_right = 1391.0
 margin_bottom = 598.0
 texture = ExtResource( 2 )
+
+[node name="sun" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2( 0.11, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/sun"]
+margin_left = 103.0
+margin_top = 19.0
+margin_right = 273.0
+margin_bottom = 184.0
+texture = ExtResource( 7 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
 z_index = -50
