@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://levels/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://levels/GameState.gd" type="Script" id=14]
 [ext_resource path="res://sfx/German Industrial Metal.mp3" type="AudioStream" id=15]
 [ext_resource path="res://props/big_lava.tscn" type="PackedScene" id=16]
+[ext_resource path="res://props/Castle.tscn" type="PackedScene" id=17]
+[ext_resource path="res://props/StarPotion.tscn" type="PackedScene" id=18]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 14 )
@@ -95,6 +97,9 @@ position = Vector2( 2861.73, 287.852 )
 [node name="potion2" parent="props/potions" instance=ExtResource( 9 )]
 position = Vector2( 3351.67, 207.852 )
 
+[node name="StarPotion" parent="props/potions" instance=ExtResource( 18 )]
+position = Vector2( 1288, 440.953 )
+
 [node name="iceblocks" type="Node" parent="props"]
 
 [node name="ice" parent="props/iceblocks" instance=ExtResource( 11 )]
@@ -102,7 +107,7 @@ position = Vector2( 1524.78, 499.113 )
 z_index = -50
 
 [node name="ice2" parent="props/iceblocks" instance=ExtResource( 11 )]
-position = Vector2( 3912, 504 )
+position = Vector2( 3912, 512 )
 z_index = -50
 
 [node name="misc" type="Node" parent="props"]
@@ -135,3 +140,7 @@ tile_data = PoolIntArray( 1114305, 1, 0, 1441963, 1, 0, 1441985, 1, 0, 1769621, 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 autoplay = true
+
+[node name="Castle" parent="." instance=ExtResource( 17 )]
+position = Vector2( 4504, 212 )
+z_index = -1

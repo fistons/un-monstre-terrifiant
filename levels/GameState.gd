@@ -22,7 +22,11 @@ func add_heart():
 		update_GUI()
 		
 func add_potion():
-	pass
+	max_hearts += 1
+	update_GUI()
+	
+func star_potion():
+	$Player.set_invincible(5)
 
 func reload_scene():
 	get_tree().reload_current_scene()
@@ -38,3 +42,8 @@ func hurt():
 func lost():
 	# restart the level for now
 	get_tree().reload_current_scene()
+
+func win():
+	# get_tree().reload_current_scene()
+	pass
+	

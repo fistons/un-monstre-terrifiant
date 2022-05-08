@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-func update_stuff(hearts: int, max_hearts: int):
+func update_values(hearts: int, max_hearts: int):
 	for o in get_tree().get_nodes_in_group("gui_heart"):
 		o.queue_free()
 	

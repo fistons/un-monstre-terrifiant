@@ -12,6 +12,8 @@ const UP = Vector2(0,-1)
 const JUMP_SPEED = 2500
 const JUMP_SPEED_LADDER = -300
 
+signal animate
+
 func _ready():
 	add_to_group("Player")
 
@@ -22,6 +24,7 @@ func _physics_process(_delta):
 	move()
 	move_and_slide(motion, UP)
 	restart()
+	animate()
 		
 
 func move():
@@ -58,18 +61,25 @@ func restart():
 		get_tree().reload_current_scene()
 
 func hurt():
+	set_invincible(1.5)
+	yield(get_tree(), "idle_frame")
+	position.y -= 1
+	motion.y = -JUMP_SPEED*2
+	
+func set_invincible(duration: float = 5):
 	if not invincible:
 		invincible = true
-		$InvincibleTimer.start()
+		$InvincibleTimer.start(duration)
 		$AnimationPlayer.play("invisible")
-	position.y -= 1
-	yield(get_tree(), "idle_frame")
-	motion.y = -JUMP_SPEED*2
 
 func in_ladder(in_ladder: bool = true): 
 	ladder = in_ladder
-	print("in ladder " + str(ladder))
+	
+func animate():
+	emit_signal("animate", motion)
 
 func _on_InvincibleTimer_timeout():
 	invincible = false
+	$AnimationPlayer.stop()
+	$AnimationPlayer.seek(0, true)
 
