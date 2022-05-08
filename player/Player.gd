@@ -3,14 +3,17 @@ extends KinematicBody2D
 
 var motion = Vector2(0,0)
 var invincible: bool = false
+var ladder: bool = false
 
 const SPEED = 500
 const GRAVITY = 300
+const GRAVITY_LADDER = 100
 const UP = Vector2(0,-1)
 const JUMP_SPEED = 2500
+const JUMP_SPEED_LADDER = -300
 
 func _ready():
-	add_to_group("player")
+	add_to_group("Player")
 
 
 func _physics_process(_delta):
@@ -30,8 +33,12 @@ func move():
 		motion.x = 0
 
 func jump():
-	if Input.is_action_pressed("jump") and is_on_floor():
-		motion.y -= JUMP_SPEED
+	if Input.is_action_pressed("jump"):
+		if not ladder and is_on_floor():
+			motion.y -= JUMP_SPEED
+		elif ladder:
+			motion.y = JUMP_SPEED_LADDER
+	
 
 func apply_grativity():
 	if position.y > 6500:
@@ -41,7 +48,10 @@ func apply_grativity():
 	elif is_on_ceiling():
 		motion.y = 1
 	else:
-		motion.y += GRAVITY
+		if not ladder:
+			motion.y += GRAVITY
+		else: 
+			motion.y += GRAVITY_LADDER
 
 func restart():
 	if Input.is_action_just_pressed("restart"):
@@ -56,6 +66,9 @@ func hurt():
 	yield(get_tree(), "idle_frame")
 	motion.y = -JUMP_SPEED*2
 
+func in_ladder(in_ladder: bool = true): 
+	ladder = in_ladder
+	print("in ladder " + str(ladder))
 
 func _on_InvincibleTimer_timeout():
 	invincible = false

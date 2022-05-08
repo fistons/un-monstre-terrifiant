@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://levels/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://props/flower2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://props/moving_cloud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://props/rocks.tscn" type="PackedScene" id=6]
+[ext_resource path="res://props/Ladder.tscn" type="PackedScene" id=7]
 [ext_resource path="res://props/coin.tscn" type="PackedScene" id=8]
 [ext_resource path="res://props/potion.tscn" type="PackedScene" id=9]
 [ext_resource path="res://props/heart.tscn" type="PackedScene" id=10]
@@ -113,6 +114,11 @@ z_index = 1
 [node name="big_lava" parent="props/misc" instance=ExtResource( 16 )]
 position = Vector2( 3920, 560 )
 z_index = 1
+
+[node name="Ladder" parent="props" instance=ExtResource( 7 )]
+position = Vector2( 3464, 352 )
+z_index = -50
+flip_h = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 511, 299 )
