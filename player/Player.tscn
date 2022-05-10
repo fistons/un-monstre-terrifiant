@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://props/PlayerAnimation.tscn" type="PackedScene" id=1]
 [ext_resource path="res://gfx/background.png" type="Texture" id=2]
@@ -7,9 +7,6 @@
 [ext_resource path="res://gfx/mountains02.png" type="Texture" id=5]
 [ext_resource path="res://gfx/mountains03.png" type="Texture" id=6]
 [ext_resource path="res://gfx/sun.png" type="Texture" id=7]
-[ext_resource path="res://gfx/FRG02.png" type="Texture" id=8]
-[ext_resource path="res://gfx/FRG03.png" type="Texture" id=9]
-[ext_resource path="res://gfx/FRG01.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.5, 79 )
@@ -102,42 +99,6 @@ margin_top = 95.0
 margin_right = 551.0
 margin_bottom = 601.0
 texture = ExtResource( 6 )
-
-[node name="ParallaxForeground" type="ParallaxBackground" parent="Camera2D"]
-layer = 128
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxForeground"]
-motion_scale = Vector2( 2, 1 )
-motion_mirroring = Vector2( 2500, 0 )
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxForeground/ParallaxLayer"]
-margin_left = 83.0
-margin_top = 415.0
-margin_right = 251.0
-margin_bottom = 605.0
-texture = ExtResource( 8 )
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxForeground"]
-motion_scale = Vector2( 1.5, 1 )
-motion_mirroring = Vector2( 2000, 0 )
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxForeground/ParallaxLayer2"]
-margin_left = 757.0
-margin_top = 402.0
-margin_right = 913.0
-margin_bottom = 598.0
-texture = ExtResource( 9 )
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Camera2D/ParallaxForeground"]
-motion_scale = Vector2( 4, 1 )
-motion_mirroring = Vector2( 3000, 0 )
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxForeground/ParallaxLayer3"]
-margin_left = -4.0
-margin_top = 475.0
-margin_right = 657.0
-margin_bottom = 603.0
-texture = ExtResource( 10 )
 
 [node name="InvincibleTimer" type="Timer" parent="."]
 wait_time = 3.0
