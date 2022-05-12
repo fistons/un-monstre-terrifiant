@@ -44,6 +44,5 @@ func lost():
 	get_tree().reload_current_scene()
 
 func win():
-	# get_tree().reload_current_scene()
-	pass
+	get_tree().change_scene("res://levels/WinScreen.tscn")
 	
