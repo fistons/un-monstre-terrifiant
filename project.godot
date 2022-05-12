@@ -15,6 +15,10 @@ config/description="Un monstre terrifiant qui n'a pas le choix de ne pas marcher
 run/main_scene="res://levels/main_menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/resizable=false

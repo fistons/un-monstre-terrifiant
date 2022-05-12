@@ -4,9 +4,9 @@ func update_values(hearts: int, max_hearts: int):
 	for o in get_tree().get_nodes_in_group("gui_heart"):
 		o.queue_free()
 	
-	for n in range(hearts):
+	for n in range(Global.hearts):
 		var child: Container = add_child(load("res://props/ui/FullHeart.tscn").instance())
 		
-	for n in range(hearts, max_hearts):
+	for n in range(Global.hearts, Global.max_hearts):
 		var child: Container = add_child(load("res://props/ui/EmptyHeart.tscn").instance())
 		

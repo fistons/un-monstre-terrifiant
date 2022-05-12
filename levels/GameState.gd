@@ -7,22 +7,25 @@ export var max_hearts: int = 5
 
 func _ready():
 	add_to_group("GameState")
+	Global.coins = coins
+	Global.hearts = hearts
+	Global.max_hearts = max_hearts
 	update_GUI()
 
 func update_GUI():
-	get_tree().call_group("GUI", "update", coins, hearts, max_hearts)
+	get_tree().call_group("GUI", "update_gui")
 
 func add_coin():
-	coins+=1
+	Global.coins+=1
 	update_GUI()
 	
 func add_heart():
-	if hearts < max_hearts:
-		hearts+=1
+	if Global.hearts < Global.max_hearts:
+		Global.hearts+=1
 		update_GUI()
 		
 func add_potion():
-	max_hearts += 1
+	Global.max_hearts += 1
 	update_GUI()
 	
 func star_potion():
@@ -33,8 +36,8 @@ func reload_scene():
 
 func hurt():
 	if not $Player.invincible:
-		hearts -= 1
-		if hearts < 0:
+		Global.hearts -= 1
+		if Global.hearts < 0:
 			lost()
 	update_GUI()
 	$Player.hurt()
