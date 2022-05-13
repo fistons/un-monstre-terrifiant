@@ -14,6 +14,7 @@ variables:
   EXPORT_NAME: un-monstre-terrifiant
 
 linux:
+  when: manual
   stage: export
   tags:
     - docker
@@ -26,6 +27,7 @@ linux:
       - build/linux
 
 windows:
+  when: manual
   stage: export
   tags:
     - docker
@@ -38,6 +40,7 @@ windows:
       - build/windows
 
 web:
+  when: manual
   stage: export
   tags:
     - docker
@@ -52,6 +55,7 @@ web:
 
 # Itch.io Deploy
 itchio:linux:
+  when: manual
   stage: deploy
   tags:
     - docker
@@ -63,6 +67,7 @@ itchio:linux:
     - tags
 
 itchio:windows:
+  when: manual
   stage: deploy
   tags:
     - docker
@@ -74,6 +79,7 @@ itchio:windows:
     - tags
 
 itchio:web:
+  when: manual
   stage: deploy
   tags:
     - docker
