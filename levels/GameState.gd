@@ -5,6 +5,8 @@ var coins: int = 0
 export var hearts: int = 3
 export var max_hearts: int = 5
 
+onready var player = $Player
+
 func _ready():
 	add_to_group("GameState")
 	Global.coins = coins

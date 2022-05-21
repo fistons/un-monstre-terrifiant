@@ -1,14 +1,22 @@
-[gd_resource type="TileSet" load_steps=7 format=2]
+[gd_resource type="TileSet" load_steps=9 format=2]
 
 [ext_resource path="res://gfx/groundbloc.png" type="Texture" id=1]
 [ext_resource path="res://gfx/ground.png" type="Texture" id=2]
 [ext_resource path="res://gfx/ground02.png" type="Texture" id=3]
+
+[sub_resource type="NavigationPolygon" id=21]
+vertices = PoolVector2Array( 352, 96, 0.448822, 96, 0.448822, 0.448822, 352, 0.448822 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 175.5, 41.5 )
 
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 48, 48 )
+
+[sub_resource type="NavigationPolygon" id=22]
+vertices = PoolVector2Array( 0.046936, 96, 0.046936, 94.89, 0.448822, 26.169, 28.1784, 2.05634, 351.288, 0.850708, 352, 96 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
 
 [sub_resource type="ConvexPolygonShape2D" id=20]
 points = PoolVector2Array( -176, 48, -176, -20, -159, -37, 176, -36, 176, 48 )
@@ -22,6 +30,7 @@ points = PoolVector2Array( -176, 48, -176, -20, -159, -37, 176, -36, 176, 48 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 176, 48 )
 0/navigation_offset = Vector2( 176, 48 )
+0/navigation = SubResource( 21 )
 0/shape_offset = Vector2( 175.5, 53.5 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 175.5, 53.5 )
 0/shape = SubResource( 10 )
@@ -64,6 +73,7 @@ points = PoolVector2Array( -176, 48, -176, -20, -159, -37, 176, -36, 176, 48 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 176, 48 )
 2/navigation_offset = Vector2( 176, 48 )
+2/navigation = SubResource( 22 )
 2/shape_offset = Vector2( 176, 48 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 176, 48 )
 2/shape = SubResource( 20 )

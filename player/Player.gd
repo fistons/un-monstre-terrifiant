@@ -6,9 +6,7 @@ var invincible: bool = false
 var ladder: bool = false
 
 const SPEED = 500
-const GRAVITY = 300
 const GRAVITY_LADDER = 100
-const UP = Vector2(0,-1)
 const JUMP_SPEED = 2500
 const JUMP_SPEED_LADDER = -300
 
@@ -22,7 +20,7 @@ func _physics_process(_delta):
 	apply_grativity()
 	jump()
 	move()
-	move_and_slide(motion, UP)
+	move_and_slide(motion, Global.UP)
 	restart()
 	animate()
 		
@@ -41,7 +39,9 @@ func jump():
 			motion.y -= JUMP_SPEED
 		elif ladder:
 			motion.y = JUMP_SPEED_LADDER
-	
+			
+func jump_ennemy():
+	motion.y -= JUMP_SPEED
 
 func apply_grativity():
 	if position.y > 6500:
@@ -52,7 +52,7 @@ func apply_grativity():
 		motion.y = 1
 	else:
 		if not ladder:
-			motion.y += GRAVITY
+			motion.y += Global.GRAVITY
 		else: 
 			motion.y += GRAVITY_LADDER
 
@@ -64,7 +64,7 @@ func hurt():
 	set_invincible(1.5)
 	yield(get_tree(), "idle_frame")
 	position.y -= 1
-	motion.y = -JUMP_SPEED*2
+	motion.y = -JUMP_SPEED*1.5
 	
 func set_invincible(duration: float = 5):
 	if not invincible:
