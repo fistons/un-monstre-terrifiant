@@ -60,11 +60,12 @@ func restart():
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 
-func hurt():
+func hurt(jump: bool = true):
 	set_invincible(1.5)
 	yield(get_tree(), "idle_frame")
-	position.y -= 1
-	motion.y = -JUMP_SPEED*1.5
+	if jump:
+		position.y -= 1
+		motion.y = -JUMP_SPEED*1.5
 	
 func set_invincible(duration: float = 5):
 	if not invincible:

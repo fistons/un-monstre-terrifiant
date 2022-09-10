@@ -36,13 +36,13 @@ func star_potion():
 func reload_scene():
 	get_tree().reload_current_scene()
 
-func hurt():
+func hurt(jump: bool = true):
 	if not $Player.invincible:
 		Global.hearts -= 1
 		if Global.hearts < 0:
 			lost()
 	update_GUI()
-	$Player.hurt()
+	$Player.hurt(jump)
 
 func lost():
 	# restart the level for now
