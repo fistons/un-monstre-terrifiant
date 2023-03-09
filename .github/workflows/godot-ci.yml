@@ -1,8 +1,8 @@
 name: "godot-ci export"
 on: 
   push:
-    branches:
-      - main
+    tags: 
+      - '**'
 
 env:
   GODOT_VERSION: 3.5.1
@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-22.04
     container:
       image: barichello/godot-ci:3.5.1
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -42,13 +44,20 @@ jobs:
           ITCH_GAME: ${{ secrets.ITCHIO_GAME }}
           ITCH_USER: ${{ secrets.ITCHIO_USERNAME }}
           PACKAGE: build/windows
-          VERSION: alpha_gh_${{ github.RUN_NUMBER }}
+          VERSION: ${{ github.REF_NAME }}
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/windows/*"
+          name: MonstreTerrifiant_Windows_${{ github.REF_NAME }}
+          tag: Windows_${{ github.REF_NAME }}
 
   export-linux:
     name: Linux Export
     runs-on: ubuntu-22.04
     container:
       image: barichello/godot-ci:3.5.1
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -75,13 +84,20 @@ jobs:
           ITCH_GAME: ${{ secrets.ITCHIO_GAME }}
           ITCH_USER: ${{ secrets.ITCHIO_USERNAME }}
           PACKAGE: build/linux
-          VERSION: alpha_gh_${{ github.RUN_NUMBER }}
+          VERSION: ${{ github.REF_NAME }}
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/linux/*"
+          name: MonstreTerrifiant_Linux_${{ github.REF_NAME }}
+          tag: Linux_${{ github.REF_NAME }}
 
   export-web:
     name: Web Export
     runs-on: ubuntu-22.04
     container:
       image: barichello/godot-ci:3.5.1
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -108,4 +124,12 @@ jobs:
           ITCH_GAME: ${{ secrets.ITCHIO_GAME }}
           ITCH_USER: ${{ secrets.ITCHIO_USERNAME }}
           PACKAGE: build/web
-          VERSION: alpha_gh_${{ github.RUN_NUMBER }}
+          VERSION: ${{ github.RUN_NUMBER }}
+      - uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r web.zip build/web/
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "web.zip"
+          name: MonstreTerrifiant_Web_${{ github.REF_NAME }}
+          tag: Web_${{ github.REF_NAME }}
