@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 
 var motion = Vector2(0,0)
@@ -20,7 +20,9 @@ func _physics_process(_delta):
 	apply_grativity()
 	jump()
 	move()
-	move_and_slide(motion, Global.UP)
+	set_velocity(motion)
+	set_up_direction(Global.UP)
+	move_and_slide()
 	restart()
 	animate()
 		
@@ -62,7 +64,7 @@ func restart():
 
 func hurt(jump: bool = true):
 	set_invincible(1.5)
-	yield(get_tree(), "idle_frame")
+	await get_tree().idle_frame
 	if jump:
 		position.y -= 1
 		motion.y = -JUMP_SPEED*1.5

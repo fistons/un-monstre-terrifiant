@@ -1,15 +1,15 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://props/PlayerAnimation.tscn" type="PackedScene" id=1]
-[ext_resource path="res://gfx/background.png" type="Texture" id=2]
-[ext_resource path="res://gfx/mountains.png" type="Texture" id=3]
+[ext_resource path="res://gfx/background.png" type="Texture2D" id=2]
+[ext_resource path="res://gfx/mountains.png" type="Texture2D" id=3]
 [ext_resource path="res://player/Player.gd" type="Script" id=4]
-[ext_resource path="res://gfx/mountains02.png" type="Texture" id=5]
-[ext_resource path="res://gfx/mountains03.png" type="Texture" id=6]
-[ext_resource path="res://gfx/sun.png" type="Texture" id=7]
+[ext_resource path="res://gfx/mountains02.png" type="Texture2D" id=5]
+[ext_resource path="res://gfx/mountains03.png" type="Texture2D" id=6]
+[ext_resource path="res://gfx/sun.png" type="Texture2D" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 22.5, 79 )
+size = Vector2( 22.5, 79 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "invisible"
@@ -23,13 +23,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.1, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.568627, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource( 4 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 1 )]
@@ -53,20 +53,20 @@ motion_scale = Vector2( 0.1, 1 )
 motion_mirroring = Vector2( 2140, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/back"]
-margin_left = -749.0
-margin_top = -122.0
-margin_right = 1391.0
-margin_bottom = 598.0
+offset_left = -749.0
+offset_top = -122.0
+offset_right = 1391.0
+offset_bottom = 598.0
 texture = ExtResource( 2 )
 
 [node name="sun" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
 motion_scale = Vector2( 0.11, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/sun"]
-margin_left = 103.0
-margin_top = 19.0
-margin_right = 273.0
-margin_bottom = 184.0
+offset_left = 103.0
+offset_top = 19.0
+offset_right = 273.0
+offset_bottom = 184.0
 texture = ExtResource( 7 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
@@ -75,17 +75,17 @@ motion_scale = Vector2( 0.25, 1 )
 motion_mirroring = Vector2( 1080, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer2"]
-margin_left = 413.0
-margin_top = 255.0
-margin_right = 705.0
-margin_bottom = 600.0
+offset_left = 413.0
+offset_top = 255.0
+offset_right = 705.0
+offset_bottom = 600.0
 texture = ExtResource( 3 )
 
 [node name="TextureRect2" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer2"]
-margin_left = 1.0
-margin_top = 128.0
-margin_right = 428.0
-margin_bottom = 600.0
+offset_left = 1.0
+offset_top = 128.0
+offset_right = 428.0
+offset_bottom = 600.0
 texture = ExtResource( 5 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
@@ -94,10 +94,10 @@ motion_scale = Vector2( 0.3, 1 )
 motion_mirroring = Vector2( 2100, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer3"]
-margin_left = 222.0
-margin_top = 95.0
-margin_right = 551.0
-margin_bottom = 601.0
+offset_left = 222.0
+offset_top = 95.0
+offset_right = 551.0
+offset_bottom = 601.0
 texture = ExtResource( 6 )
 
 [node name="InvincibleTimer" type="Timer" parent="."]

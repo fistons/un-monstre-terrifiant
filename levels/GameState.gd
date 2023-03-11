@@ -2,10 +2,10 @@ extends Node2D
 
 var coins: int = 0
 
-export var hearts: int = 3
-export var max_hearts: int = 5
+@export var hearts: int = 3
+@export var max_hearts: int = 5
 
-onready var player = $Player
+@onready var player = $Player
 
 func _ready():
 	add_to_group("GameState")
@@ -49,5 +49,5 @@ func lost():
 	get_tree().reload_current_scene()
 
 func win():
-	get_tree().change_scene("res://levels/WinScreen.tscn")
+	get_tree().change_scene_to_file("res://levels/WinScreen.tscn")
 	

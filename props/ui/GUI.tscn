@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://gfx/UI/piecegauge.png" type="Texture" id=1]
+[ext_resource path="res://gfx/UI/piecegauge.png" type="Texture2D" id=1]
 [ext_resource path="res://props/ui/HeartBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://props/ui/GUI.gd" type="Script" id=3]
 
@@ -8,29 +8,29 @@
 script = ExtResource( 3 )
 
 [node name="Control" type="Control" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+offset_right = 1024.0
+offset_bottom = 600.0
 
 [node name="VBoxContainer" type="HBoxContainer" parent="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="CoinBar" type="HBoxContainer" parent="Control/VBoxContainer"]
-margin_right = 209.0
-margin_bottom = 101.0
+offset_right = 209.0
+offset_bottom = 101.0
 
 [node name="CoinGauge" type="TextureRect" parent="Control/VBoxContainer/CoinBar"]
-margin_right = 209.0
-margin_bottom = 101.0
+offset_right = 209.0
+offset_bottom = 101.0
 texture = ExtResource( 1 )
 
 [node name="CoinCount" type="Label" parent="Control/VBoxContainer/CoinBar/CoinGauge"]
-margin_left = 101.306
-margin_top = 28.0623
-margin_right = 186.306
-margin_bottom = 53.0623
+offset_left = 101.306
+offset_top = 28.0623
+offset_right = 186.306
+offset_bottom = 53.0623
 
 [node name="HeartBar" parent="Control/VBoxContainer" instance=ExtResource( 2 )]
-margin_left = 217.0
-margin_right = 217.0
-margin_bottom = 101.0
+offset_left = 217.0
+offset_right = 217.0
+offset_bottom = 101.0
