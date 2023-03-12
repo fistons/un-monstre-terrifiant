@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://dp585nlvbliiy"]
 
-[ext_resource path="res://gfx/UI/FullHeart.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://bd56e3dm32urb" path="res://gfx/UI/FullHeart.png" id="1"]
 
 [node name="FullHeart" type="Control" groups=["gui_heart"]]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_minimum_size = Vector2( 35, 0 )
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 centered = false

@@ -5,8 +5,8 @@ func update_values(hearts: int, max_hearts: int):
 		o.queue_free()
 	
 	for n in range(Global.hearts):
-		var child: Container = add_child(load("res://props/ui/FullHeart.tscn").instantiate())
+		add_child(load("res://props/ui/FullHeart.tscn").instantiate())
 		
 	for n in range(Global.hearts, Global.max_hearts):
-		var child: Container = add_child(load("res://props/ui/EmptyHeart.tscn").instantiate())
+		add_child(load("res://props/ui/EmptyHeart.tscn").instantiate())
 		

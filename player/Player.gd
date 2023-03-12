@@ -10,7 +10,7 @@ const GRAVITY_LADDER = 100
 const JUMP_SPEED = 2500
 const JUMP_SPEED_LADDER = -300
 
-signal animate
+signal animate_signal
 
 func _ready():
 	add_to_group("Player")
@@ -62,10 +62,10 @@ func restart():
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 
-func hurt(jump: bool = true):
+func hurt(should_jump: bool = true):
 	set_invincible(1.5)
 	await get_tree().idle_frame
-	if jump:
+	if should_jump:
 		position.y -= 1
 		motion.y = -JUMP_SPEED*1.5
 	
@@ -75,11 +75,11 @@ func set_invincible(duration: float = 5):
 		$InvincibleTimer.start(duration)
 		$AnimationPlayer.play("invisible")
 
-func in_ladder(in_ladder: bool = true): 
-	ladder = in_ladder
+func in_ladder(in_the_ladder: bool = true): 
+	ladder = in_the_ladder
 	
 func animate():
-	emit_signal("animate", motion)
+	emit_signal("animate_signal", motion)
 
 func _on_InvincibleTimer_timeout():
 	invincible = false
