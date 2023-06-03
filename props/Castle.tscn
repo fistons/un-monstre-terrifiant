@@ -49,6 +49,7 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 z_index = 1
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="door" type="Sprite" parent="."]
