@@ -1,17 +1,9 @@
 extends Node2D
 
-var coins: int = 0
-
-export var hearts: int = 3
-export var max_hearts: int = 5
-
 onready var player = $Player
 
 func _ready():
 	add_to_group("GameState")
-	Global.coins = coins
-	Global.hearts = hearts
-	Global.max_hearts = max_hearts
 	update_GUI()
 
 func update_GUI():
@@ -49,5 +41,10 @@ func lost():
 	get_tree().reload_current_scene()
 
 func win():
-	get_tree().change_scene("res://levels/WinScreen.tscn")
+	var currentScene = get_tree().current_scene.get_name()
+	if currentScene == "Level1":
+		get_tree().change_scene("res://levels/level2.tscn")
+	else:
+		get_tree().change_scene("res://levels/WinScreen.tscn")
+	
 	
