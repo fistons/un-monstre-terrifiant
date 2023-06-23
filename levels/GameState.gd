@@ -48,3 +48,9 @@ func win():
 		get_tree().change_scene("res://levels/WinScreen.tscn")
 	
 	
+
+
+func _on_Timer_timeout():
+	var canon : Particles2D = $Player/Camera2D2/Particles2D
+	canon.emitting = true
+	

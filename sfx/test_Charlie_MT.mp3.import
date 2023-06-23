@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/test_Charlie_MT.mp3-974db89c9a3d1a42ad28930a62f693f3.mp3str"
+
+[deps]
+
+source_file="res://sfx/test_Charlie_MT.mp3"
+dest_files=[ "res://.import/test_Charlie_MT.mp3-974db89c9a3d1a42ad28930a62f693f3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

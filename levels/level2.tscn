@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://gfx/SnowGround.png" type="Texture" id=1]
 [ext_resource path="res://gfx/Ice.png" type="Texture" id=2]
@@ -8,6 +8,17 @@
 [ext_resource path="res://levels/GameState.gd" type="Script" id=6]
 [ext_resource path="res://props/npc/snow_ennemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://props/snow_castle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sfx/test_Charlie_MT.mp3" type="AudioStream" id=9]
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 2
+emission_box_extents = Vector3( 1000, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 100, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 15.0
+scale_random = 1.0
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 352, 128, 0, 128, 0, 40, 351, 40 )
@@ -68,6 +79,13 @@ z_index = 4
 
 [node name="Camera2D2" parent="Player" instance=ExtResource( 5 )]
 
+[node name="Particles2D" type="Particles2D" parent="Player/Camera2D2"]
+position = Vector2( -187.306, -522 )
+amount = 700
+lifetime = 23.02
+local_coords = false
+process_material = SubResource( 4 )
+
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 10
 tile_set = SubResource( 1 )
@@ -84,3 +102,16 @@ position = Vector2( 691, 492 )
 
 [node name="Castle" parent="." instance=ExtResource( 8 )]
 position = Vector2( 3427, 250 )
+
+[node name="music" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 9 )
+autoplay = true
+
+[node name="Timer" type="Timer" parent="music"]
+wait_time = 35.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="music/Timer" to="." method="_on_Timer_timeout"]
