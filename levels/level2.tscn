@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://gfx/SnowGround.png" type="Texture" id=1]
 [ext_resource path="res://gfx/Ice.png" type="Texture" id=2]
@@ -9,15 +9,17 @@
 [ext_resource path="res://props/npc/snow_ennemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://props/snow_castle.tscn" type="PackedScene" id=8]
 [ext_resource path="res://sfx/test_Charlie_MT.mp3" type="AudioStream" id=9]
+[ext_resource path="res://props/coin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://gfx/Snowflake.png" type="Texture" id=11]
 
 [sub_resource type="ParticlesMaterial" id=4]
 emission_shape = 2
-emission_box_extents = Vector3( 1000, 1, 1 )
+emission_box_extents = Vector3( 330, 10, 1 )
 flag_disable_z = true
 gravity = Vector3( 0, 100, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 15.0
+scale = 2.0
 scale_random = 1.0
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
@@ -77,14 +79,37 @@ script = ExtResource( 6 )
 position = Vector2( 186.306, 404 )
 z_index = 4
 
-[node name="Camera2D2" parent="Player" instance=ExtResource( 5 )]
+[node name="Snow" type="Node2D" parent="Player"]
+position = Vector2( -186.306, -404 )
 
-[node name="Particles2D" type="Particles2D" parent="Player/Camera2D2"]
-position = Vector2( -187.306, -522 )
-amount = 700
+[node name="SnowParticles2" type="Particles2D" parent="Player/Snow"]
+position = Vector2( 1, -69 )
+amount = 250
 lifetime = 23.02
+visibility_rect = Rect2( -400, -200, 800, 400 )
 local_coords = false
 process_material = SubResource( 4 )
+texture = ExtResource( 11 )
+
+[node name="SnowParticles" type="Particles2D" parent="Player/Snow"]
+position = Vector2( 552, -73 )
+amount = 250
+lifetime = 23.02
+visibility_rect = Rect2( -600, -200, 1125, 400 )
+local_coords = false
+process_material = SubResource( 4 )
+texture = ExtResource( 11 )
+
+[node name="SnowParticles3" type="Particles2D" parent="Player/Snow"]
+position = Vector2( 1019, -69 )
+amount = 250
+lifetime = 23.02
+visibility_rect = Rect2( -400, -200, 800, 400 )
+local_coords = false
+process_material = SubResource( 4 )
+texture = ExtResource( 11 )
+
+[node name="Camera2D2" parent="Player" instance=ExtResource( 5 )]
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 10
@@ -109,9 +134,31 @@ position = Vector2( 3427, 250 )
 stream = ExtResource( 9 )
 autoplay = true
 
-[node name="Timer" type="Timer" parent="music"]
-wait_time = 35.0
-one_shot = true
-autostart = true
+[node name="coins" type="Node" parent="."]
 
-[connection signal="timeout" from="music/Timer" to="." method="_on_Timer_timeout"]
+[node name="coin" parent="coins" instance=ExtResource( 10 )]
+position = Vector2( 393, 459 )
+
+[node name="coin2" parent="coins" instance=ExtResource( 10 )]
+position = Vector2( 553, 456 )
+
+[node name="coin3" parent="coins" instance=ExtResource( 10 )]
+position = Vector2( 809, 459 )
+
+[node name="coin4" parent="coins" instance=ExtResource( 10 )]
+position = Vector2( 981, 463 )
+
+[node name="coin5" parent="coins" instance=ExtResource( 10 )]
+position = Vector2( 1144, 464 )
+
+[node name="coin6" parent="coins" instance=ExtResource( 10 )]
+position = Vector2( 1311, 464 )
+
+[node name="coin7" parent="coins" instance=ExtResource( 10 )]
+position = Vector2( 1501, 463 )
+
+[node name="coin8" parent="coins" instance=ExtResource( 10 )]
+position = Vector2( 1700, 459 )
+
+[node name="coin9" parent="coins" instance=ExtResource( 10 )]
+position = Vector2( 1876, 460 )
